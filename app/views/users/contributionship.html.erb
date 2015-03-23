@@ -1,0 +1,21 @@
+<h4>These are the records [<%= @user.email %>] has contributed to solve:</h4>
+
+<table>
+  <tbody>
+    <% @user.pages.each do |p| %>
+      <tr class='rowlist'>
+        <td><%= p.title %></td>
+        <td><%= link_to 'Show', p %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class='footer'>
+  <%= link_to 'All Titles', pages_path %>
+  <% if current_user %>
+    <%= link_to "Sign Out", destroy_user_session_url, method: 'delete' %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_url %>
+  <% end %>
+</div>
