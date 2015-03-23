@@ -1,0 +1,22 @@
+<strong>Title:</strong>
+<div class='title'>
+  <%= @page.title %>
+</div>
+<br />
+<strong>Article:</strong>
+<div class='body'>
+  <%= @page.body %>
+  <br />
+</div>
+
+<hr/>
+
+<h4>Modified by:</h4>
+<ul>
+ <li><%= render @page.users([@page, @user]) %></li>
+</ul>
+
+<div class='footer'>
+  <%= link_to 'Edit', edit_page_path(@page) %> |
+  <%= link_to 'Back', pages_path %>
+</div>
